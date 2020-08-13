@@ -44,7 +44,7 @@ export default {
     },
     markAllAsIncomplete: function () {
       this.$slots.default.forEach((toDo) => {
-        if (toDo.componentInstance) toDo.componentInstance.updateValue(false);
+        if (toDo.componentInstance?.updateValue) toDo.componentInstance.updateValue(false);
       });
     },
   },
