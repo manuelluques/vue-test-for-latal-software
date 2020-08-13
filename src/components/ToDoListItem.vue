@@ -1,6 +1,6 @@
 <template>
   <li class="todo-list-item">
-    <span @click="updateValue">
+    <span @click="updateValue(!value)">
       [ <span v-if="value">X</span> ]
     </span>
     <b>{{title}}</b>
@@ -15,10 +15,10 @@ export default {
   name: "ToDoListItem",
   props: ["title", "subtitle", "value"],
   methods: {
-    updateValue: function () {
+    updateValue: function (value) {
       /*I added this to keep updated the v-model. 
       It does not interfere with the todo-list component.*/
-      this.$emit("input", !this.value);
+      this.$emit("input",value);
     },
   },
 };
